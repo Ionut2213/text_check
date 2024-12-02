@@ -9,6 +9,28 @@ from transformers import pipeline
 # pip install transformers (i comment this because i already installed this package)
 
 
+# functions for our app
+
+def count_words(text):
+    words = re.findall(r'\b\w+\b', text)
+    return len(words)
+
+def count_punctuation(text):
+    punctuation = re.findall(r'[.,!?;:]', text)
+    return len(punctuation)
+
+def count_characters(text):
+    return len(text)
+
+
+
+
+
+
+
+
+
+
 # Loading files in our app
 def load_selected_file():
     global content
