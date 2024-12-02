@@ -23,7 +23,19 @@ def count_characters(text):
     return len(text)
 
 
+# function that handle the user questions
 
+def handle_question(question, context):
+    if "search for words" in question.lower():
+        return f"The file contains{count_words(content)} words."
+    elif "how many punctuation signs" in question.lower():
+        return f"The file contains {count_punctuation(content)} punctuation signs"
+    elif "how many characters" in question.lower():
+        return f"The file contains {count_characters(content)} characters"
+    else:
+        qa_pipeline = pipeline("question-answering", model='distilbert-base-uncased-distilbert-squad')
+        response = qa_pipeline(question=question, context=context)
+        return response['answer']
 
 
 
