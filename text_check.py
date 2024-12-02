@@ -23,11 +23,11 @@ def count_characters(text):
     return len(text)
 
 
-# function that handle the user questions
+# function to handle the user questions
 
 def handle_question(question, context):
     if "search for words" in question.lower():
-        return f"The file contains{count_words(content)} words."
+        return f"The file contains {count_words(content)} words."
     elif "how many punctuation signs" in question.lower():
         return f"The file contains {count_punctuation(content)} punctuation signs"
     elif "how many characters" in question.lower():
@@ -36,6 +36,18 @@ def handle_question(question, context):
         qa_pipeline = pipeline("question-answering", model='distilbert-base-uncased-distilbert-squad')
         response = qa_pipeline(question=question, context=context)
         return response['answer']
+    
+
+# function that handle the user question
+
+def ask_question():
+    global content
+    question = question_entry.get()
+    if content:
+        answer = handle_question(question, content)
+        output_text.insert(tk.END, f"Question: {question}\nAnswer: {answer}\n\n")
+    else:
+        output_text.insert(tk.END, "No file was uploaded.\n")
 
 
 
@@ -82,7 +94,7 @@ dropdown_menu = tk.OptionMenu(root, file_dropdown, *files)
 dropdown_menu.pack(pady=10)
 
 
-load_button = tk.Button(root, text="Upload the file", command=None)
+load_button = tk.Button(root, text="Upload the file", command=load_selected_file)
 load_button.pack(pady=10)
 
 
@@ -95,7 +107,7 @@ question_entry = tk.Entry(root, width=50)
 question_entry.pack(pady=5)
 
 
-ask_button = tk.Button(root, text ="Ask the question", command=None)
+ask_button = tk.Button(root, text ="Ask the question", command=ask_question)
 ask_button.pack(pady=10)
 
 
