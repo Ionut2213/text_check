@@ -22,6 +22,25 @@ def count_punctuation(text):
 def count_characters(text):
     return len(text)
 
+# couting words by letters
+#1
+def word_with_one_letter(text):
+    word = re.findall(r"\b\w{1}\b", text)
+    return len(word)
+#2
+def word_with_two_letter(text):
+    word = re.findall(r"\b\w{2}\b", text)
+    return len(word)
+#3
+def word_with_three_letter(text):
+    word = re.findall(r"\b\w{3}\b", text)
+    return len(word)
+#4
+def word_with_four_letter(text):
+    word = re.findall(r"\b\w{4}\b", text)
+    return len(word)
+
+
 
 # function to handle the user questions
 
@@ -32,6 +51,15 @@ def handle_question(question, context):
         return f"The file contains {count_punctuation(content)} punctuation signs"
     elif "how many characters" in question.lower():
         return f"The file contains {count_characters(content)} characters"
+    elif "words with one letter" in question.lower():
+        return f"The file contains {word_with_one_letter(content)} words with one letter"
+    elif "words with two letter" in question.lower():
+        return f"The file contains {word_with_two_letter(content)} words with one letter"
+    elif "words with three letter" in question.lower():
+        return f"The file contains {word_with_three_letter(content)} words with one letter"
+    elif "words with four letter" in question.lower():
+        return f"The file contains {word_with_four_letter(content)} words with one letter"
+
     else:
         qa_pipeline = pipeline("question-answering", model='distilbert-base-uncased-distilbert-squad')
         response = qa_pipeline(question=question, context=context)
@@ -47,7 +75,7 @@ def ask_question():
         answer = handle_question(question, content)
         output_text.insert(tk.END, f"Question: {question}\nAnswer: {answer}\n\n")
     else:
-        output_text.insert(tk.END, "No file was uploaded.\n")
+        output_text.insert(tk.END, "No file was uploaded!!!!.\n")
 
 
 
@@ -77,7 +105,7 @@ def load_selected_file():
 
 # User interface
 root = tk.Tk()
-root.title("Text checker using AI")
+root.title("Text checking using AI")
 
 
 # Dropdown menu for selecting files
