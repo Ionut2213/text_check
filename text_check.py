@@ -54,11 +54,11 @@ def handle_question(question, context):
     elif "words with one letter" in question.lower():
         return f"The file contains {word_with_one_letter(content)} words with one letter"
     elif "words with two letter" in question.lower():
-        return f"The file contains {word_with_two_letter(content)} words with one letter"
+        return f"The file contains {word_with_two_letter(content)} words with two letter"
     elif "words with three letter" in question.lower():
-        return f"The file contains {word_with_three_letter(content)} words with one letter"
+        return f"The file contains {word_with_three_letter(content)} words with three letter"
     elif "words with four letter" in question.lower():
-        return f"The file contains {word_with_four_letter(content)} words with one letter"
+        return f"The file contains {word_with_four_letter(content)} words with four letter"
 
     else:
         qa_pipeline = pipeline("question-answering", model='distilbert-base-uncased-distilbert-squad')
