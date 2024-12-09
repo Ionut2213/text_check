@@ -26,7 +26,7 @@ def count_characters(text):
 
 
 #1
-def words_with_one_letter(text):
+def words_with_1_letters(text):
     word = re.findall(r"\b[a-zA-Z]{1}\b", text)
     if not word:
         return "Words with one character doesn t exists"
@@ -35,7 +35,7 @@ def words_with_one_letter(text):
         return len(word)
 
 #2
-def words_with_two_letters(text):
+def words_with_2_letters(text):
     word = re.findall(r"\b[a-zA-Z]{2}\b", text)
     if not word:
         return "Words with two characters doesn t exists"
@@ -44,7 +44,7 @@ def words_with_two_letters(text):
         return len(word)
 
 #3
-def words_with_three_letters(text):
+def words_with_3_letters(text):
     word = re.findall(r"\b[a-zA-Z]{3}\b", text)
     if not word:
         return "Words with three characters doesn t exists"
@@ -53,7 +53,7 @@ def words_with_three_letters(text):
     return len(word)
 
 #4
-def words_with_four_letters(text):
+def words_with_4_letters(text):
     word = re.findall(r"\b[a-zA-Z]{4}\b", text)
     if not word:
         return "Words with four characters doesn t exists"
@@ -62,7 +62,7 @@ def words_with_four_letters(text):
         return len(word)
 
 #5
-def words_with_five_letters(text):
+def words_with_5_letters(text):
     word = re.findall(r"\b[a-zA-Z]{5}\b", text)
     if not word:
         return "Words with five characters doesn t exists"
@@ -71,7 +71,7 @@ def words_with_five_letters(text):
         return len(word)
 
 #6
-def words_with_six_letters(text):
+def words_with_6_letters(text):
     word = re.findall(r"\b[a-zA-Z]{6}\b", text)
     if not word:
         return "Words with six characters doesn t exists"
@@ -80,7 +80,7 @@ def words_with_six_letters(text):
         return len(word)
 
 #7
-def words_with_seven_letters(text):
+def words_with_7_letters(text):
     word = re.findall(r"\b[a-zA-Z]{7}\b", text)
     if not word:
         return "Words with seven characters doesn t exists"
@@ -89,7 +89,7 @@ def words_with_seven_letters(text):
         return len(word)
 
 #8
-def words_with_eight_letters(text):
+def words_with_8_letters(text):
     word = re.findall(r"\b[a-zA-Z]{8}\b", text)
     if not word:
         return "Words with eight characters doesn t exists"
@@ -98,7 +98,7 @@ def words_with_eight_letters(text):
         return len(word)
 
 #9
-def words_with_nine_letters(text):
+def words_with_9_letters(text):
     word = re.findall(r"\b[a-zA-Z]{9}\b", text)
     if not word:
         return "Words with nine characters doesn t exists"
@@ -107,7 +107,7 @@ def words_with_nine_letters(text):
         return len(word)
 
 #10
-def words_with_ten_letters(text):
+def words_with_10_letters(text):
     word = re.findall(r"\b[a-zA-Z]{10}\b", text)
     if not word:
         return "Words with ten characters doesn t exists"
@@ -116,7 +116,7 @@ def words_with_ten_letters(text):
         return len(word)
 
 #11
-def words_with_eleven_letters(text):
+def words_with_11_letters(text):
     word = re.findall(r"\b[a-zA-Z]{11}\b", text)
     if not word:
         return "Words with eleven characters doesn t exists"
@@ -125,7 +125,7 @@ def words_with_eleven_letters(text):
         return len(word)
 
 #12
-def words_with_twelve_letters(text):
+def words_with_12_letters(text):
     word = re.findall(r"\b[a-zA-Z]{12}\b", text)
     if not word:
         return "Words with twelve characters doesn t exists"
@@ -134,7 +134,7 @@ def words_with_twelve_letters(text):
         return len(word)
 
 #13
-def words_with_thirteen_letters(text):
+def words_with_13_letters(text):
     word = re.findall(r"\b[a-zA-Z]{13}\b", text)
     if not word:
         return "Words with thirteen characters doesn t exists"
@@ -145,7 +145,7 @@ def words_with_thirteen_letters(text):
 
 
 #14
-def words_with_fourteen_letters(text):
+def words_with_14_letters(text):
     word = re.findall(r"\b[a-zA-Z]{14}\b", text)
     if not word:
         return "Words with fourteen characters doesn t exists"
@@ -156,7 +156,7 @@ def words_with_fourteen_letters(text):
 
 
 #15
-def words_with_fifteen_letters(text):
+def words_with_15_letters(text):
     word = re.findall(r"\b[a-zA-Z]{15}\b", text)
     if not word:
         return "Words with fifteen characters doesn t exists"
@@ -165,7 +165,7 @@ def words_with_fifteen_letters(text):
         return len(word)
 
 #16
-def words_with_sixteen_letters(text):
+def words_with_16_letters(text):
     word = re.findall(r"\b[a-zA-Z]{16}\b", text)
     if not word:
         return "Words with sixteen characters doesn t exists"
@@ -174,7 +174,7 @@ def words_with_sixteen_letters(text):
         return len(word)
 
 #17
-def words_with_seventeen_letters(text):
+def words_with_17_letters(text):
     word = re.findall(r"\b[a-zA-Z]{17}\b", text)
     if not word:
         return "Words with seventeen characters doesn t exists"
@@ -192,69 +192,13 @@ def handle_question(question, context):
         return f"The file contains {count_punctuation(content)} punctuation signs"
     elif "how many characters" in question.lower():
         return f"The file contains {count_characters(content)} characters"
-    #1
-    elif "words with 1" in question.lower():
-        return f"The file contains {words_with_one_letter(content)} words with one letter"
-    #2
-    elif "words with 2" in question.lower():
-        return f"The file contains {words_with_two_letters(content)} words with two letters"
-    #3
-    elif "words with 3" in question.lower():
-        return f"The file contains {words_with_three_letters(content)} words with three letters"
-    #4
-    elif "words with 4" in question.lower():
-        return f"The file contains {words_with_four_letters(content)} words with four letters"
-    #5
-    elif "words with 5" in question.lower():
-        return f"The file contains {words_with_five_letters(content)} words with five letters"
+    
+    
+    # Verificam intrebarile pentru cuvinte cu 1 - 17 litere
 
-    #6
-    elif "words with 6" in question.lower():
-        return f"The file contains {words_with_six_letters(content)} words with six letters"
-
-    #7
-    elif "words with 7" in question.lower():
-        return f"The file contains {words_with_seven_letters(content)} words with seven letters"
-
-    #8
-    elif "words with 8" in question.lower():
-        return f"The file contains {words_with_eight_letters(content)} words with eight letters"
-
-    #9
-    elif "words with 9" in question.lower():
-        return f"The file contains {words_with_nine_letters(content)} words with nine letters"
-
-    #10
-    elif "words with 10" in question.lower():
-        return f"The file contains {words_with_ten_letters(content)} words with ten letters"
-
-    #11
-    elif "words with 11" in question.lower():
-        return f"The file contains {words_with_eleven_letters(content)} words with eleven letters"
-
-    #12
-    elif "words with 12" in question.lower():
-        return f"The file contains {words_with_twelve_letters(content)} words with twelve letters"
-
-    #13
-    elif "words with 13" in question.lower():
-        return f"The file contains {words_with_thirteen_letters(content)} words with thirteen letters"
-
-    #14
-    elif "words with 14" in question.lower():
-        return f"The file contains {words_with_fourteen_letters(content)} words with fourteen letters"
-
-    #15
-    elif "words with 15" in question.lower():
-        return f"The file contains {words_with_fifteen_letters(content)} words with fifteen letters"
-
-    #16
-    elif "words with 16" in question.lower():
-        return f"The file contains {words_with_sixteen_letters(content)} words with sixteen letters"
-
-    #17
-    elif "words with 17" in question.lower():
-        return f"The file contains {words_with_seventeen_letters(content)} words with seventeen letters"
+    for i in range(1, 18):
+        if f"words with {i}" in question:
+            return f"The file contains {globals()[f'words_with_{i}_letters'](content)} words with {i} letters"
 
     else:
         qa_pipeline = pipeline("question-answering", model='distilbert-base-uncased-distilbert-squad')
