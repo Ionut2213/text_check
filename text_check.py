@@ -30,20 +30,26 @@ def words_with_one_letter(text):
     word = re.findall(r"\b\w{1}\b", text)
     if not word:
         return "Words with one character doesn t exists"
-    return len(word)
+    else:
+        print("Print words with 1 letter:", word)
+        return len(word)
 
 #2
 def words_with_two_letters(text):
     word = re.findall(r"\b\w{2}\b", text)
     if not word:
         return "Words with two characters doesn t exists"
-    return len(word)
+    else:
+        print("Print words with 2 letters:", word)
+        return len(word)
 
 #3
 def words_with_three_letters(text):
     word = re.findall(r"\b\w{3}\b", text)
     if not word:
         return "Words with three characters doesn t exists"
+    else:
+        print("Print words with 3 letters:", word)
     return len(word)
 
 #4
@@ -51,7 +57,9 @@ def words_with_four_letters(text):
     word = re.findall(r"\b\w{4}\b", text)
     if not word:
         return "Words with four characters doesn t exists"
-    return len(word)
+    else:
+        print("Print words with 4 letters:", word)
+        return len(word)
 
 #5
 def words_with_five_letters(text):
@@ -67,56 +75,72 @@ def words_with_six_letters(text):
     word = re.findall(r"\b\w{6}\b", text)
     if not word:
         return "Words with six characters doesn t exists"
-    return len(word)
+    else:
+        print("Print words with 6 letters:", word)
+        return len(word)
 
 #7
 def words_with_seven_letters(text):
     word = re.findall(r"\b\w{7}\b", text)
     if not word:
         return "Words with seven characters doesn t exists"
-    return len(word)
+    else:
+        print("Print words with 7 letters:", word)
+        return len(word)
 
 #8
 def words_with_eight_letters(text):
     word = re.findall(r"\b\w{8}\b", text)
     if not word:
         return "Words with eight characters doesn t exists"
-    return len(word)
+    else:
+        print("Print words with 8 letters:", word)
+        return len(word)
 
 #9
 def words_with_nine_letters(text):
     word = re.findall(r"\b\w{9}\b", text)
     if not word:
         return "Words with nine characters doesn t exists"
-    return len(word)
+    else:
+        print("Print words with 9 letters:", word)
+        return len(word)
 
 #10
 def words_with_ten_letters(text):
     word = re.findall(r"\b\w{10}\b", text)
     if not word:
         return "Words with ten characters doesn t exists"
-    return len(word)
+    else:
+        print("Print words with 10 letters:", word)
+        return len(word)
 
 #11
 def words_with_eleven_letters(text):
     word = re.findall(r"\b\w{11}\b", text)
     if not word:
         return "Words with eleven characters doesn t exists"
-    return len(word)
+    else:
+        print("Print words with 11 letters:", word)
+        return len(word)
 
 #12
 def words_with_twelve_letters(text):
     word = re.findall(r"\b\w{12}\b", text)
     if not word:
         return "Words with twelve characters doesn t exists"
-    return len(word)
+    else:
+        print("Print words with 12 letters:", word)
+        return len(word)
 
 #13
 def words_with_thirteen_letters(text):
     word = re.findall(r"\b\w{13}\b", text)
     if not word:
         return "Words with thirteen characters doesn t exists"
-    return len(word)
+    else:
+        print("Print words with 13 letters:", word)
+        return len(word)
 
 
 
@@ -125,7 +149,9 @@ def words_with_fourteen_letters(text):
     word = re.findall(r"\b\w{14}\b", text)
     if not word:
         return "Words with fourteen characters doesn t exists"
-    return len(word)
+    else:
+        print("Print words with 14 letters:", word)
+        return len(word)
 
 
 
@@ -134,7 +160,9 @@ def words_with_fifteen_letters(text):
     word = re.findall(r"\b\w{15}\b", text)
     if not word:
         return "Words with fifteen characters doesn t exists"
-    return len(word)
+    else:
+        print("Print words with 15 letters:", word)
+        return len(word)
 
 #16
 def words_with_sixteen_letters(text):
@@ -150,7 +178,9 @@ def words_with_seventeen_letters(text):
     word = re.findall(r"\b\w{17}\b", text)
     if not word:
         return "Words with seventeen characters doesn t exists"
-    return len(word)
+    else:
+        print("Print words with 16 letters:", word)
+        return len(word)
 
 
 # function to handle the user questions
