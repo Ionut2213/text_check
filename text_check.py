@@ -11,16 +11,11 @@ from transformers import pipeline
 
 # functions for our app
 
-def count_words(text):
-    words = re.findall(r'\b\w+\b', text)
-    return len(words)
+
 
 def count_punctuation(text):
     punctuation = re.findall(r'[.,!?;:]', text)
-    return len(punctuation)
-
-def count_characters(text):
-    return len(text)
+    return len(punctuation) if punctuation else 0
 
 # couting words by letters
 
@@ -72,7 +67,7 @@ def words_with_9_letters(text):
 
 #10
 def words_with_10_letters(text):
-    word = re.findall(r"\b[a-zA-Z]{10}\b", text)
+    word = re.findall(r"\b[a-zA-Z]{10, 17}\b", text)
     return len(word) if word else 0
 
 #11
@@ -122,12 +117,9 @@ def words_with_17_letters(text):
 # function to handle the user questions
 
 def handle_question(question, context):
-    if "search for words" in question.lower():
-        return f"The file contains {count_words(content)} words."
-    elif "how many punctuation signs" in question.lower():
+    
+    if "how many punctuation signs" in question.lower():
         return f"The file contains {count_punctuation(content)} punctuation signs"
-    elif "how many characters" in question.lower():
-        return f"The file contains {count_characters(content)} characters"
     
     
     # Verificam intrebarile pentru cuvinte cu 1 - 17 litere
@@ -181,7 +173,7 @@ def load_selected_file():
 
 # User interface
 root = tk.Tk()
-root.title("Text checking using AI")
+root.title("Text checking using user input questions")
 
 
 # Dropdown menu for selecting files
