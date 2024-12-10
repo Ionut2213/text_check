@@ -67,7 +67,7 @@ def words_with_9_letters(text):
 
 #10
 def words_with_10_letters(text):
-    word = re.findall(r"\b[a-zA-Z]{10, 17}\b", text)
+    word = re.findall(r"\b[a-zA-Z]{10}\b", text)
     return len(word) if word else 0
 
 #11
@@ -122,16 +122,20 @@ def handle_question(question, context):
         return f"The file contains {count_punctuation(content)} punctuation signs"
     
     
-    # Verificam intrebarile pentru cuvinte cu 1 - 17 litere
-
+    # check the questions from 1 to 17
     for i in range(1, 18):
-        if f"words with {i}" in question:
-            return f"The file contains {globals()[f'words_with_{i}_letters'](content)} words with {i} letters"
+        if re.search(rf"\bwords with {i}\b", question.lower()):
+            function_name = f"words_with_{i}_letters"
+            if function_name in globals():
+                count = globals()[function_name](content)
+                return f"The file contains {count} words with {i} letters"
+            else:
+                return f"No function defined for {i} letters"
+        
 
-    else:
-        qa_pipeline = pipeline("question-answering", model='distilbert-base-uncased-distilbert-squad')
-        response = qa_pipeline(question=question, context=context)
-        return response['answer']
+    qa_pipeline = pipeline("question-answering", model='distilbert-base-uncased-distilbert-squad')
+    response = qa_pipeline(question=question, context=context)
+    return response['answer']
     
 
 # function that handle the user question
