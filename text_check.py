@@ -199,7 +199,7 @@ dropdown_menu = tk.OptionMenu(root, file_dropdown, *files)
 dropdown_menu.pack(pady=10)
 
 
-load_button = tk.Button(root, text="Upload the file", command=load_selected_file)
+load_button = tk.Button(root, text="Upload the file", command=load_selected_file, bg="lightblue", fg="black", font=("Arial", 12, "bold"))
 load_button.pack(pady=10)
 
 
@@ -212,13 +212,13 @@ question_entry = tk.Entry(root, width=50)
 question_entry.pack(pady=5)
 
 
-ask_button = tk.Button(root, text ="Ask the question", command=ask_question)
+ask_button = tk.Button(root, text ="Ask the question", command=ask_question, bg="lightgreen", fg="black", font=("Arial", 12, "bold"))
 ask_button.pack(pady=10)
 
 
 # Area where the answers are displayed
-output_text = scrolledtext.ScrolledText(root, width=70, height=20)
-output_text.pack(pady=10)
+output_text = scrolledtext.ScrolledText(root, width=70, height=40, wrap=tk.WORD, font=("Courier", 15))
+output_text.pack(pady=5)
 
 root.mainloop()
 
