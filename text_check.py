@@ -107,11 +107,14 @@ def words_with_16_letters(text):
 #17
 def words_with_17_letters(text):
     word = re.findall(r"\b[a-zA-Z]{17}\b", text)
-    if not word:
-        return "Words with seventeen characters doesn t exists"
-    else:
-        print("Print words with 16 letters:", word)
-        return len(word)
+    return len(word) if word else 0
+
+
+# numbers part
+
+def numbers_in_text(text):
+    numbers = re.findall(r"\b[0-9]\b", text)
+    return len(numbers) if numbers else 0
 
 
 # function to handle the user questions
@@ -120,6 +123,8 @@ def handle_question(question, context):
     
     if "how many punctuation signs" in question.lower():
         return f"The file contains {count_punctuation(content)} punctuation signs"
+    elif "how many numbers" in question.lower():
+        return f"The file contains {numbers_in_text(content)} numbers"
     
     
     # check the questions from 1 to 17
